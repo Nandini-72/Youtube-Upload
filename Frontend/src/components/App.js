@@ -39,13 +39,13 @@ const App = () => {
             <p>{name}</p>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <input onChange={handleChange} type="text" name="title" autoComplete="off" placeholder="Title" />
+                    <input onChange={handleChange} type="text" name="title" autoComplete="off" required placeholder="Title" />
                 </div>
                 <div>
-                    <textarea onChange={handleChange} name="description" autoComplete="off" placeholder="Description" ></textarea>
+                    <textarea onChange={handleChange} name="description" autoComplete="off" required placeholder="Description" ></textarea>
                 </div>
                 <div>
-                    <input onChange={handleChange} accept="video/mp4" type="file" name="file"   placeholder="Add video file"/>
+                    <input onChange={handleChange} accept="video/mp4" type="file" name="file"  required placeholder="Add video file"/>
                 </div>
                 <button type="submit">Upload</button>
             </form>

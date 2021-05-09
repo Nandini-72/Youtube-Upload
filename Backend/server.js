@@ -5,7 +5,7 @@ const cors = require("cors");
 const open = require("open");
 const multer = require("multer");
 const fs = require("fs");
-const CREDENTIALS = require("./new.json");
+const CREDENTIALS = require("./c.json");
 
 const app = express();
 app.use(express.json());
@@ -58,7 +58,7 @@ app.get("/oauth2callback", (req, res) => {
               description,
             },
             status: {
-              privacyStatus: "private",
+              privacyStatus: "public",
             },
           },
           // This is for the callback function
@@ -71,9 +71,13 @@ app.get("/oauth2callback", (req, res) => {
         },
         (err, re) => {
           console.log("Done");
-          console.log(err);
-          link = `https://youtu.be/${re.data.id}`
-          res.redirect("http://localhost:3000/success")
+          if(err === null){
+            link = `your video is updated successfully https://youtu.be/${re.data.id}`
+            res.redirect("http://localhost:3000/")
+          }
+          else{
+            res.redirect("http://localhost:3000/fail")
+          }
           console.log(err);
         }
       );
