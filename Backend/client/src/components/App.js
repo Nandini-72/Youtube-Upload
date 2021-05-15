@@ -47,9 +47,9 @@ const App = () => {
                 <div>
                     <input onChange={handleChange} accept="video/mp4" type="file" name="file"  required placeholder="Add video file"/>
                 </div>
-                <button type="submit">Upload</button>
+                <button className="btn" type="submit">Upload</button>
             </form>
-            <button  onClick={getLink} >Link</button>
+            <button className="btn" onClick={getLink} >Link</button>
         </div>
     )
 }

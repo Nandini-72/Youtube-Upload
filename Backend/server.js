@@ -5,7 +5,7 @@ const cors = require("cors");
 const open = require("open");
 const multer = require("multer");
 const fs = require("fs");
-const CREDENTIALS = require("./c.json");
+const CREDENTIALS = require("./new.json");
 
 const app = express();
 app.use(express.json());
@@ -58,7 +58,7 @@ app.get("/oauth2callback", (req, res) => {
               description,
             },
             status: {
-              privacyStatus: "public",
+              privacyStatus: "private",
             },
           },
           // This is for the callback function
